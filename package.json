@@ -1,0 +1,11 @@
+{
+  "name": "vue-utils",
+  "version": "1.0.0",
+  "description": "a plugin with useful day-to-day functions",
+  "main": "src/index.js",
+  "author": "@viniazvd",
+  "license": "y",
+  "devDependencies": {
+    "bili": "^3.1.2"
+  }
+}
