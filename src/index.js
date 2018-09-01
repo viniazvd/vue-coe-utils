@@ -128,6 +128,13 @@ const regexValidation = (type, value) => {
   return fields[type].test(value)
 }
 
+// https://repl.it/@viniazvd/intersect
+const intersect = (array1, array2, param) => {
+  const setObj = new Set(array1.map(array1 => array1[param]))  
+  
+  return array2.filter(array2 => !setObj.has(array2[param]))
+}
+
 const functions = {
   isValid,
   getAbsolutValue,
@@ -143,7 +150,8 @@ const functions = {
   formRequireds,
   objFilter,
   findBy,
-  regexValidation
+  regexValidation,
+  intersect
 }
 
 export default Vue => {
