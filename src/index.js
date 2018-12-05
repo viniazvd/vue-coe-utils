@@ -1,5 +1,3 @@
-// imports..
-
 // https://repl.it/@viniazvd/isValid
 const isValid = value => {
   if (Array.isArray(value)) return !!value.length
@@ -80,7 +78,7 @@ const translateEntity = (labels, entity) => {
 // https://repl.it/@viniazvd/isFormValid (ft. -@lubien)
 const isFormValid = (requireds = [], form = {}) => {
   const isValid = prop => form[prop]
-  
+
   return requireds.every(isValid)
 }
 
@@ -94,7 +92,7 @@ const formValidator = (requireds, obj, x = new Set(requireds)) =>
     }, {})
 
 // https://repl.it/@viniazvd/formRequireds
-const formRequireds = (obj = {}, requireds = []) => 
+const formRequireds = (obj = {}, requireds = []) =>
   Object
     .entries(obj)
     .reduce((acc, [key]) => {
@@ -109,16 +107,16 @@ const objFilter = (data = {}, keys = []) => JSON.parse(JSON.stringify(data, keys
 
 // https://repl.it/@viniazvd/findBy
 const findBy = (
-  list = [], 
-  strings = '', 
-  keys = [], 
+  list = [],
+  strings = '',
+  keys = [],
   terms = strings.toLowerCase().split(' ')) => {
     return list.filter(el => terms.some(v => keys.some(k => el[ k ].toLowerCase().includes(v))))
 }
 
 // https://repl.it/@viniazvd/regexValidation
 const regexValidation = (type, value) => {
-  const fields = { 
+  const fields = {
     email: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
     phone: /^\([1-9]{2}\) [2-9][0-9]{3,4}\-[0-9]{4}$/,
     birthday: /^[0-9]{4}[\-][0-9]{2}[\-][0-9]{2}$/,
@@ -130,8 +128,8 @@ const regexValidation = (type, value) => {
 
 // https://repl.it/@viniazvd/intersect
 const intersect = (array1, array2, param) => {
-  const setObj = new Set(array1.map(array1 => array1[param]))  
-  
+  const setObj = new Set(array1.map(array1 => array1[param]))
+
   return array2.filter(array2 => !setObj.has(array2[param]))
 }
 
@@ -155,7 +153,7 @@ const functions = {
 }
 
 export default Vue => {
-  Object.defineProperty(Vue.prototype, '$f', {
+  Object.defineProperty(Vue.prototype, '$utils', {
     get () {
       return functions
     }
