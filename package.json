@@ -1,10 +1,34 @@
 {
-  "name": "vue-utils",
-  "version": "1.0.0",
+  "name": "vue-coe-utils",
+  "version": "0.0.1",
   "description": "a plugin with useful day-to-day functions",
-  "main": "src/index.js",
-  "author": "@viniazvd",
-  "license": "y",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "js",
+    "function",
+    "helpers",
+    "utils",
+    "services"
+  ],
+  "cdn": "dist/vue-coe-utils.js",
+  "main": "dist/vue-coe-utils.cjs.js",
+  "unpkg": "dist/vue-coe-utils.js",
+  "module": "dist/vue-coe-utils.es.js",
+  "jsdelivr": "dist/vue-coe-utils.js",
+  "umd:main": "dist/vue-coe-utils.js",
+  "files": ["dist"],
+  "author": {
+    "name": "Vinicius Azevedo",
+    "email": "viniazvd@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniazvd/vue-coe-utils"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "bili src/index.js --formats cjs,es,umd --banner --js buble --moduleName VueCoeUtils"
+  },
   "devDependencies": {
     "bili": "^3.1.2"
   }
